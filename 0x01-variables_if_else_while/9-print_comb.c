@@ -23,7 +23,7 @@ int main(void)
 	{
 	putchar(j + '0');
 	}
-	counter++
+	counter++;
 
 	}
 	}
