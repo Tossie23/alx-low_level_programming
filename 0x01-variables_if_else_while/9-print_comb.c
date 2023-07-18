@@ -7,22 +7,24 @@
  */
 int main(void)
 {
-	int i, j;
+	int i, j, counter = 0;
 
 	for (i = 0; i < 10; i++)
 	{
 	for (j = i; j < 10; j++)
 	{
+	if (counter != 0)
+	{
+	putchar(',');
+	putchar(' ');
+	}
 	putchar(i + '0');
 	if (i != j)
 	{
 	putchar(j + '0');
 	}
-	if (i != 9 || j != 9)
-	{
-	putchar(',');
-	putchar(' ');
-	}
+	counter++
+
 	}
 	}
 
