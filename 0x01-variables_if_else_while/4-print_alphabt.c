@@ -1,29 +1,21 @@
 #include <stdio.h>
 
 /**
- * main - Start here program to print lowercase followed by uppercase
+ * main - Start here program to print alphabet skip q and e
  *
- * Return: 0 (successful)
+ * Return: 0 (Successful)
  */
 int main(void)
 {
-	int i;
+	char letter;
 
-	/* Print lowercase */
-	for (i = 97; i <= 122; i++)
+	for (letter = 'a'; letter <= 'z'; letter++)
 	{
-		putchar(i);
+		if (letter != 'e' && letter != 'q')
+			putchar(letter);
 	}
 
-	/* Print uppercase */
-	for (i = 65; i <= 90; i++)
-	{
-		putchar(i);
-	}
-
-	/* Print new line */
 	putchar('\n');
 
 	return (0);
 }
-
