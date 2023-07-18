@@ -7,23 +7,19 @@
  */
 int main(void)
 {
-	int i, j, counter = 0;
+	int i, j;
 
 	for (i = 0; i < 10; i++)
 	{
-	for (j = i; j < 10; j++)
+	putchar(i + '0');
+	if (i != 9)
 	{
-	if (counter != 0)
+	for (j = i; j < 10; j++)
 	{
 	putchar(',');
 	putchar(' ');
-	}
-	putchar(i + '0');
-	if (i != j)
-	{
 	putchar(j + '0');
 	}
-	counter++;
 
 	}
 	}
