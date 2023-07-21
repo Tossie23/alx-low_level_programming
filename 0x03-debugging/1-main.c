@@ -12,12 +12,14 @@ int main(void)
 
 	i = 0;
 
-	/* Commenting out the problematic while loop
-	while (i < 10)
-	{
-		putchar(i);
-	}
-	*/
+	/*
+	 * Commenting out the problematic while loop
+	 *
+	 * while (i < 10)
+	 * {
+	 *	putchar(i);
+	 * }
+	 */
 
 	printf("Infinite loop avoided! \\o/\n");
 
