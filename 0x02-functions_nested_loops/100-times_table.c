@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -15,28 +14,29 @@ void print_times_table(int n)
 
 	for (row = 0; row <= n; row++)
 	{
-		printf("0");
+		_putchar('0');
 
 		for (column = 1; column <= n; column++)
 		{
 			product = row * column;
 
-			printf("\t");
+			_putchar(',');
+			_putchar(' ');
 
 			if (product < 100)
-				printf("\t");
+				_putchar(' ');
 
 			if (product < 10)
-				printf("\t");
+				_putchar(' ');
 
 			if (product >= 100)
-				printf("%d", product / 100);
+				_putchar('0' + product / 100);
 
 			if (product >= 10)
-				printf("%d", (product / 10) % 10);
+				_putchar('0' + (product / 10) % 10);
 
-			printf("%d", product % 10);
+			_putchar('0' + product % 10);
 		}
-		printf("\n");
+		_putchar('\n');
 	}
 }
