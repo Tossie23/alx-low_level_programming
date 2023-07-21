@@ -2,70 +2,39 @@
 #include <math.h>
 
 /**
- * is_prime - Checks if a number is prime.
- * @num: The number to check.
+ * main - finds and prints the largest prime factor of the number 612852475143
+ * followed by a new line
  *
- * Return: 1 if the number is prime, 0 otherwise.
+ * Return: 0 (Successful)
  */
-
-int is_prime(unsigned long num)
+int main(void)
 {
-	unsigned long i; /* Move the declaration to the beginning of the function */
+	long int n;
+	long int max;
+	long int i;
 
-	if (num <= 1)
-		return (0);
+	n = 612852475143;
+	max = -1;
 
-	if (num == 2)
-		return (1);
-
-	for (i = 2; i <= sqrt(num); i++)
+	while (n % 2 == 0)
 	{
-		if (num % i == 0)
-			return (0);
+		max = 2;
+		n /= 2;
 	}
 
-	return (1);
-}
-
-/**
- * largest_prime_factor - Finds the largest prime factor of a number.
- * @num: The number to find the largest prime factor for.
- *
- * Return: The largest prime factor of the number.
- */
-
-unsigned long largest_prime_factor(unsigned long num)
-
-{
-	unsigned long largest_factor = 0;
-	unsigned long i;
-
-	for (i = 2; i <= sqrt(num); i++)
+	for (i = 3; i <= sqrt(n); i = i + 2)
 	{
-		if (num % i == 0)
+		while (n % i == 0)
 		{
-			if (is_prime(i))
-				largest_factor = i;
-
-			/* Divide by the factor to get the other factor */
-			while (num % i == 0)
-				num /= i;
+			max = i;
+			n = n / i;
 		}
 	}
 
-	/* If the remainder is greater than 1, it is a prime factor */
-	if (num > 1)
-		largest_factor = num;
+	if (n > 2)
+		max = n;
 
-	return (largest_factor);
-}
-
-int main(void)
-{
-	unsigned long number = 612852475143;
-	unsigned long largest_prime = largest_prime_factor(number);
-
-	printf("%lu\n", largest_prime);
+	printf("%ld\n", max);
 
 	return (0);
 }
