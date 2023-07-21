@@ -3,7 +3,6 @@
 /**
  * times_table - Prints the 9 times table, starting with 0
  */
-
 void times_table(void)
 {
 	int row, column, product;
@@ -15,9 +14,16 @@ void times_table(void)
 			product = row * column;
 
 			if (product < 10)
+			{
+				if (column != 0)
+					_putchar(' ');
 				_putchar(' ');
+			}
 			else
+			{
+				_putchar(' ');
 				_putchar((product / 10) + '0');
+			}
 
 			_putchar((product % 10) + '0');
 
