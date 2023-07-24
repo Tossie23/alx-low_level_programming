@@ -1,17 +1,15 @@
-#include <stdio.h>
-
-void puts2(char *);
+#include "main.h"
 
 /**
- * main - check the code for Holberton School students.
+ * main - check the code
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	char *str;
+    char *str;
 
-	str = "Holberton!\0Holberton";
-	puts2(str);
-	return (0);
+    str = "0123456789";
+    puts2(str);
+    return (0);
 }
