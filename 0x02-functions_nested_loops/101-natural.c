@@ -5,11 +5,14 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
-	int i, sum = 0;
+	int limit = 1024;
+	int sum = 0;
+	int i;
 
-	for (i = 0; i < 1024; i++)
+	for (i = 0; i < limit; i++)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
@@ -17,7 +20,7 @@ int main(void)
 		}
 	}
 
-	printf("%d\n", sum);
+	printf("The sum of all multiples of 3 or 5 below 1024 is: %d\n", sum);
 
 	return (0);
 }
