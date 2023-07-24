@@ -14,12 +14,12 @@ void puts2(char *str)
 		_putchar(str[i]);
 
 		if (str[i + 1] != '\0')
-		
+
 		{
 			i++;
 		}
 		else
-		
+
 		{
 			break;
 		}
