@@ -5,20 +5,24 @@
  * @str: The input string.
  */
 
+
 void puts_half(char *str)
 {
-	int length = _strlen(str);
-	int i, start;
+	int count = 0, i;
 
-	if (length % 2 == 0)
-
-		start = length / 2;
-	else
-		start = (length + 1) / 2;
-
-	for (i = start; i < length; i++)
+	while (count >= 0)
 	{
-	_putchar(str[i]);
+		if (str[count] == '\0')
+			break;
+		count++;
 	}
+	if (count % 2 == 1)
+		i = count / 2;
+	else
+		i = (count - 1) / 2;
+
+	for (i++; i < count; i++)
+		_putchar(str[i]);
+	
 	_putchar('\n');
 }
