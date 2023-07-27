@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * leet - Encodes a string into 1337.
@@ -9,24 +9,20 @@ include "main.h"
 char *leet(char *str)
 {
 	char *ptr = str;
-	char *leet_chars = "AEOTL";
-	char *leet_nums = "43071";
+	char *leet_chars = "aAeEoOtTlL";
+	char *leet_nums = "4433007711";
+	int i, j;
 
-	while (*ptr != '\0')
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		char *leet_char = leet_chars;
-		char *leet_num = leet_nums;
-
-		for (; *leet_char != '\0'; leet_char++, leet_num++)
+		for (j = 0; leet_chars[j] != '\0'; j++)
 		{
-			if (*ptr == *leet_char || *ptr == (*leet_char + 32))
+			if (str[i] == leet_chars[j])
 			{
-				*ptr = *leet_num;
+				str[i] = leet_nums[j];
 				break;
 			}
 		}
-
-		ptr++;
 	}
 
 	return (str);
