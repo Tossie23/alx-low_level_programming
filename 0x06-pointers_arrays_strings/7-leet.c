@@ -10,22 +10,22 @@ char *leet(char *str)
 {
 	char *ptr = str;
 	char *leet_chars = "AEOTL";
-	char *leet_replacements = "43071";
-
-	int i, j;
+	char *leet_nums = "43071";
 
 	while (*ptr != '\0')
 	{
-		i = 0;
-		while (leet_chars[i] != '\0')
+		char *leet_char = leet_chars;
+		char *leet_num = leet_nums;
+
+		for (; *leet_char != '\0'; leet_char++, leet_num++)
 		{
-			if (*ptr == leet_chars[i] || *ptr == leet_chars[i] + 32)
+			if (*ptr == *leet_char || *ptr == (*leet_char + 32))
 			{
-				*ptr = leet_replacements[i];
+				*ptr = *leet_num;
 				break;
 			}
-			i++;
 		}
+
 		ptr++;
 	}
 
