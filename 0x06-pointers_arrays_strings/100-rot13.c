@@ -8,22 +8,21 @@
  */
 char *rot13(char *str)
 {
-	char *ptr = str;
-	char *rot13_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *rot13_nums = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
-	while (*ptr != '\0')
+	char *x = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *y = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (i = 0; rot13_chars[i] != '\0'; i++)
+		for (j = 0; x[j] != '\0'; j++)
 		{
-			if (*ptr == rot13_chars[i])
+			if (str[i] == x[j])
 			{
-				*ptr = rot13_nums[i];
+				str[i] = y[j];
 				break;
 			}
 		}
-		ptr++;
 	}
 
 	return (str);
