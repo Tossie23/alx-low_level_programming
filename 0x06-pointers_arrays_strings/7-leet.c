@@ -6,24 +6,26 @@
  *
  * Return: A pointer to the encoded string.
  */
-char *leet(char *str)
-{
-	char *ptr = str;
-	char *leet_chars = "aAeEoOtTlL";
-	char *leet_nums = "4433007711";
-	int i, j;
 
-	for (i = 0; str[i] != '\0'; i++)
+char *leet(char *s)
+{
+	int count = 0, i;
+	int low_letters[] = {97, 101, 111, 116, 108};
+	int upp_letters[] = {65, 69, 79, 84, 76};
+	int numbers[] = {52, 51, 48, 55, 49};
+
+	while (*(s + count) != '\0')
 	{
-		for (j = 0; leet_chars[j] != '\0'; j++)
+		for (i = 0; i < 5; i++)
 		{
-			if (str[i] == leet_chars[j])
+			if (*(s + count) == low_letters[i] || *(s + count) == upp_letters[i])
 			{
-				str[i] = leet_nums[j];
+				*(s + count) = numbers[i];
 				break;
 			}
 		}
+	count++;
 	}
 
-	return (str);
+	return (s);
 }
