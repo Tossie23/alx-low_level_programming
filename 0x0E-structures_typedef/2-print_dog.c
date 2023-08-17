@@ -1,40 +1,18 @@
 #include "dog.h"
-#include <stdlib.h>
-#include <string.h>
+#include <stdio.h>
 
 /**
- * init_dog - initialize a variable of type struct dog
- * @d: struct dog
- * @name: name of dog
- * @age: age of dog
- * @owner: owner of dog
+ * print_dog - prints the contents of a struct dog
+ * @d: pointer to the struct dog
  *
- * Return: nothing
+ * Return: void
  */
-void init_dog(struct dog *d, char *name, float age, char *owner)
+void print_dog(struct dog *d)
 {
-	if (d == NULL || name == NULL || owner == NULL)
-	{
-	/* Handle the error if any of the pointers are NULL */
-	return;
-	}
+	if (d == NULL)
+		return;
 
-	/* Allocate memory for the name and owner strings */
-	d->name = malloc(strlen(name) + 1);
-	d->owner = malloc(strlen(owner) + 1);
-
-	if (d->name == NULL || d->owner == NULL)
-	{
-	/* Handle the error if memory allocation fails */
-	free(d->name);
-	free(d->owner);
-	return;
-	}
-
-	/* Copy the name and owner strings */
-	strcpy(d->name, name);
-	strcpy(d->owner, owner);
-
-	/* Assign the age */
-	d->age = age;
+	printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
+	printf("Age: %.1f\n", d->age);
+	printf("Owner: %s\n", (d->owner != NULL) ? d->owner : "(nil)");
 }
