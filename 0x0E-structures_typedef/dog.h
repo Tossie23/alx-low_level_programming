@@ -7,7 +7,7 @@
  * @age: Second member
  * @owner: Third member
  *
- * Description: Longer description
+ * Description: Structure representing information about a dog.
  */
 struct dog
 {
